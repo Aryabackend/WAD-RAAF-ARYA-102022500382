@@ -1,20 +1,62 @@
 body{
+    background-color: rgb(241, 241, 241);
     margin: 0%;
 }
 
+button{
+    background-color: white;
+    padding: 0.5%;
+}
+
+input{
+    width: 30rem;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+
+select{
+    width: 20rem;
+}
+
+
 .top{
-    background-color: red;
+    background-color: rgb(245, 245, 29);
     width: 100%;
 }
 
 .search{
     display: flex;
-    padding: 0.7%;
-    justify-content: center;
+    padding: 2%;
+    justify-content: right;
     align-content: center;
+    white-space: nowrap;
 }
 
-.searchInput{
-    height: 25px;
-    width: 30px;
+.main{
+    justify-content: center;
+    padding-left: 30rem;
+    padding-right: 30rem;
+}
+
+.center{
+    box-sizing: border-box;
+    
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content:center ;
+    gap: 1rem;
+}
+
+.barang{
+    white-space: nowrap;
+    padding-left: 25rem;
+
+}
+
+.tabel-barang{
+    justify-content: center;
 }
