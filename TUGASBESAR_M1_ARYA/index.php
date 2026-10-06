@@ -4,16 +4,32 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="form1">
+            <form action="" method="POST">
+                Nama Barang: <input type="text" name = "namaBarang">
+                Kategori: <input type="text" name = "kategori">
+                Spesifikasi Teknis: <input type="text" name = "spek">
+                Bentuk Unit: <input type="text" name = "bentukUnit">
+                Stok: <input type="text" name = "stok">
+                <input type="submit">
+            </form>
+        </div>
+        <?php echo $_POST["namaBarang"]; ?><br>
+        <?php echo $_POST["kategori"]; ?>
         <header>
             <div class="top">
+                <img src="images/show.png" class="sidebar">
+                <h1 class="judul">
+                    Inventory Master Data
+                </h1>
                 <div class="search">
-                    <button class="searchInput">+ Tambahkan Item</button>
+                    <button class="addInput">+ Tambahkan Item</button>
                 </div>
             </div>
         </header>
         <main class="main">
             <div class="center">
-                <input type="text">
+                <input class="inputCari" type="text" placeholder="Cari Barang.."> 
                 <select name="aa" id="aa">
                     <option value="">1</option>
                     <option value="">2</option>
@@ -23,15 +39,15 @@
                 <p class="barang">Menampilkan x barang</p>
             </div>
             <hr>
-            <div>
+            <div class="bawah">
                 <table class="tabel-barang">
                     <thead>
                         <tr>
-                            <th class="px-6 py-3">SKU / Item Name</th>
-                            <th class="px-6 py-3">Category</th>
-                            <th class="px-6 py-3">Technical Specifications</th>
-                            <th class="px-6 py-3">Base Unit</th>
-                            <th class="px-6 py-3">Stock Level</th>
+                            <th class="px-6 py-3">Nama barang</th>
+                            <th class="px-6 py-3">Kategori</th>
+                            <th class="px-6 py-3">Spesifikasi Teknis</th>
+                            <th class="px-6 py-3">Bentuk Unit</th>
+                            <th class="px-6 py-3">Stok</th>
                             <th class="px-6 py-3 text-right">Actions</th>
                         </tr>
                     </thead>
@@ -39,9 +55,28 @@
                         <tr>
                             <td>
                                 <div>Industrial LED High Bay</div>
-                                <div>SKU: ELEC-LED-001</div>
                             </td>
-                            <td >
+                            <td>
+                                <span>Electronics</span>
+                            </td>
+                            <td>
+                                <p><strong>Power:</strong> 150W | <strong>Voltage:</strong> AC220-240V</p>
+                                <p>Lumens: 21,000 lm | IP65 Waterproof</p>
+                            </td>
+                            <td>PCS</td>
+                            <td>
+                                <span>140 Units</span>
+                            </td>
+                            <td>
+                                <a>Edit</a>
+                                <a>Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>Industrial LED High Bay</div>
+                            </td>
+                            <td>
                                 <span>Electronics</span>
                             </td>
                             <td>
