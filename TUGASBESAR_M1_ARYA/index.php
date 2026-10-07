@@ -2,20 +2,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        
     </head>
     <body>
-        <div class="form1">
-            <form action="" method="POST">
-                Nama Barang: <input type="text" name = "namaBarang">
-                Kategori: <input type="text" name = "kategori">
-                Spesifikasi Teknis: <input type="text" name = "spek">
-                Bentuk Unit: <input type="text" name = "bentukUnit">
-                Stok: <input type="text" name = "stok">
-                <input type="submit">
-            </form>
-        </div>
-        <?php echo $_POST["namaBarang"]; ?><br>
-        <?php echo $_POST["kategori"]; ?>
         <header>
             <div class="top">
                 <img src="images/show.png" class="sidebar">
@@ -23,11 +12,38 @@
                     Inventory Master Data
                 </h1>
                 <div class="search">
-                    <button class="addInput">+ Tambahkan Item</button>
+                    <button id="addInput">+ Tambahkan Item</button>
                 </div>
             </div>
         </header>
         <main class="main">
+            <div id="baseForm1">
+                <form class="form1" action="" method="POST">
+                    <button id="backForm">back</button>
+                    Nama Barang: <input type="text" name = "namaBarang">
+                    Kategori: <input type="text" name = "kategori">
+                    Spesifikasi Teknis: <input type="text" name = "spek">
+                    Bentuk Unit: <input type="text" name = "bentukUnit">
+                    Stok: <input type="text" name = "stok">
+                    <p>
+                    <input type="submit">
+                </form>
+            </div>
+
+            <script>
+            const buka = document.getElementById('addInput');
+            const baseForm1 = document.getElementById('baseForm1');
+            const tutup = document.getElementById('backForm');
+
+            buka.addEventListener('click', () =>{
+                baseForm1.classList.add('show');
+            });
+
+            tutup.addEventListener('click',() =>{
+                baseForm1.classList.remove('show');
+            });
+            </script>
+            
             <div class="center">
                 <input class="inputCari" type="text" placeholder="Cari Barang.."> 
                 <select name="aa" id="aa">
