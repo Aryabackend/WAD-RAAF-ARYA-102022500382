@@ -116,7 +116,7 @@ select{
     box-sizing: border-box;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(245, 245, 29);
+    background-color: #fbbf24;
     width: 100%;
     gap:35rem;
 }

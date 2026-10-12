@@ -5,7 +5,7 @@
         
     </head>
     <body>
-        <header>
+        <header>    
             <div class="top">
                 <img src="images/show.png" class="sidebar">
                 <h1 class="judul">
@@ -18,7 +18,7 @@
         </header>
         <main class="main">
             <div id="baseForm1">
-                <form class="form1" action="" method="POST">
+                <form class="form1" action="simpan.php" method="POST">
                     <button id="backForm">back</button>
                     Nama Barang: <input type="text" name = "namaBarang">
                     Kategori: <input type="text" name = "kategori">
