@@ -1,3 +1,6 @@
+<?php
+    include 'element.php'
+?>
 <!DOCTYPE html> 
 <html>
     <head>
@@ -19,14 +22,13 @@
         <main class="main">
             <div id="baseForm1">
                 <form class="form1" action="simpan.php" method="POST">
-                    <button id="backForm">back</button>
+                    <button id="backForm" type="button">Back</button>
                     Nama Barang: <input type="text" name = "namaBarang">
-                    Kategori: <input type="text" name = "kategori">
+                    Kategori: <?php echo kategori("kategori","kategoriForm") ?>
                     Spesifikasi Teknis: <input type="text" name = "spek">
                     Bentuk Unit: <input type="text" name = "bentukUnit">
                     Stok: <input type="text" name = "stok">
-                    <p>
-                    <input type="submit">
+                    <button type="submit" id="submit">Submit</button>
                 </form>
             </div>
 
@@ -46,12 +48,7 @@
             
             <div class="center">
                 <input class="inputCari" type="text" placeholder="Cari Barang.."> 
-                <select name="aa" id="aa">
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">4</option>
-                </select>
+                <?php echo kategori("kategori","kategori") ?>
                 <p class="barang">Menampilkan x barang</p>
             </div>
             <hr>
@@ -111,6 +108,7 @@
                     </tbody>
                 </table>
             </div>
+            
         </main>
         
         

@@ -7,6 +7,12 @@ body{
     
 }
 
+h1{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 button{
     background-color: white;
     padding : 9%;
@@ -14,6 +20,12 @@ button{
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3)
 }
+
+select{
+    border: 0.01px solid;
+    border-radius: 2px;
+}
+
 
 #backForm{
     position: absolute;
@@ -68,25 +80,32 @@ input{
     border-radius: 2px;
 }
 
+th, td {
+    padding: 12px;
+}
+
 table, th, td {
   border: 1px solid;
   justify-items: center;
+  white-space: nowrap;
 }
 
-select{
-    width: 20rem;
-    height: 2.6rem;
+#kategori{
+    box-sizing: content-box;
+    min-height: 1rem;
+    padding: 1%;
+    width: 30rem;
 }
 
 .search{
-    display: flex;
     padding: 2%;
-    justify-content: right;
     align-content: center;
     white-space: nowrap;
+    padding-left: 1%;
 }
 
 .main{
+    box-sizing: content-box;
     justify-content: center;
     padding-left: 30rem;
     padding-right: 30rem;
@@ -94,13 +113,16 @@ select{
 
 .center{
     box-sizing: border-box;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
     display: flex;
     flex-direction: row;
     justify-content:center ;
     gap: 1rem;
 }
 
+.bawah{
+    width: 100%;
+}
 .barang{
     white-space: nowrap;
     padding-left: 25rem;
@@ -114,11 +136,12 @@ select{
 .top{
     display: flex;
     box-sizing: border-box;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #fbbf24;
     width: 100%;
-    gap:35rem;
+    padding-left:2%;
+    padding-right: 2%;
 }
 
 .judul{
@@ -127,8 +150,9 @@ select{
 
 
 .sidebar{
-    width: 40px;
-    height: 40px;
+    width: 3rem;
+    height: 3rem;
+    padding-right: 1%;
 }
 
 .bawah{
@@ -136,7 +160,19 @@ select{
 }
 
 .inputCari{
-    height: 1.2rem;
+    min-height: 1rem;
     padding: 1%;
     width: 30rem;
+}
+
+#kategoriForm{
+    box-sizing: content-box;
+    height: 1.3rem;
+    width:10.5rem;
+}
+
+#submit{
+    box-sizing: content-box;
+    margin-top: 5%;
+    padding: 5%;
 }
