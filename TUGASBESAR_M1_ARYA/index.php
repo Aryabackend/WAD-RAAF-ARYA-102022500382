@@ -1,5 +1,5 @@
 <?php
-    include 'element.php'
+    include 'element.php';
 ?>
 <!DOCTYPE html> 
 <html>
@@ -30,7 +30,7 @@
                     Stok: <input type="text" name = "stok">
                     <button type="submit" id="submit">Submit</button>
                 </form>
-            </div>
+            </div>  
 
             <script>
             const buka = document.getElementById('addInput');
@@ -53,7 +53,50 @@
             </div>
             <hr>
             <div class="bawah">
-                <table class="tabel-barang">
+                <table class = "tabel-barang">
+                    <thead>
+                        <tr>
+                            <?php
+                                include 'databases.php';
+
+                                $sql = "SELECT id as 'ID',
+                                        nama_barang as 'Nama Barang',
+                                        kategori as 'Kategori',
+                                        spek as 'Spek',
+                                        unit as 'Unit',
+                                        stok as 'Stok'
+                                        FROM daftar_barang";
+                                $hasil = mysqli_query($conn, $sql);
+                                $row = mysqli_fetch_assoc($hasil);
+                                foreach($row as $key => $value){
+                                    echo "<th>$key</th>";
+                                }
+                            ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            include 'databases.php';
+                            $sql = "SELECT * FROM daftar_barang";
+                            $hasil = mysqli_query($conn, $sql);
+                              
+                        ?>
+                        <?php
+                            while($row = mysqli_fetch_assoc($hasil)){
+                                echo "<tr>";
+                                    foreach($row as $key => $value){
+                                        echo "<td>$value</td>";
+                                    }
+                                echo "</tr>";
+                            }
+                        ?>
+
+                            
+                                
+                           
+                    </tbody>
+                </table>
+                <!-- <table class="tabel-barang">
                     <thead>
                         <tr>
                             <th class="px-6 py-3">Nama barang</th>
@@ -106,7 +149,7 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
             </div>
             
         </main>

@@ -81,7 +81,7 @@ input{
 }
 
 th, td {
-    padding: 12px;
+    padding: 14px;
 }
 
 table, th, td {
@@ -161,7 +161,7 @@ table, th, td {
 
 .inputCari{
     min-height: 1rem;
-    padding: 1%;
+    padding: 8px;
     width: 30rem;
 }
 
