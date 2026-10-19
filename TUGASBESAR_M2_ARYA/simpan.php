@@ -1,5 +1,5 @@
 <?php
-    include 'databases.php';
+    include __DIR__ . '/databases.php'; 
     $namaBarang = $_POST['namaBarang'];
     $kategori = $_POST['kategori'];
     $spek = $_POST['spek'];
