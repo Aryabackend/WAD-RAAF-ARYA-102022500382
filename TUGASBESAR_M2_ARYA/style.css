@@ -1,6 +1,8 @@
 
 
 body{
+    display: flex;
+    flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: rgb(241, 241, 241);
     margin: 0%;
@@ -94,7 +96,6 @@ table, th, td {
     box-sizing: content-box;
     min-height: 1rem;
     padding: 1%;
-    width: 30rem;
 }
 
 .search{
@@ -107,26 +108,26 @@ table, th, td {
 .main{
     box-sizing: content-box;
     justify-content: center;
-    padding-left: 30rem;
-    padding-right: 30rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
-.center{
-    box-sizing: border-box;
-    padding-top: 2rem;
+.content{
     display: flex;
-    flex-direction: row;
-    justify-content:center ;
+    gap: 1rem;
+}
+.center{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.grup1{
+    display: flex;
     gap: 1rem;
 }
 
-.bawah{
-    width: 100%;
-}
 .barang{
-    white-space: nowrap;
-    padding-left: 25rem;
-
+    text-align: right;
+    grid-column: 4;
 }
 
 .tabel-barang{
@@ -148,6 +149,12 @@ table, th, td {
     white-space: nowrap;
 }
 
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
 
 .sidebar{
     width: 3rem;
@@ -160,9 +167,6 @@ table, th, td {
 }
 
 .inputCari{
-    min-height: 1rem;
-    padding: 8px;
-    width: 30rem;
 }
 
 #kategoriForm{

@@ -4,5 +4,16 @@
     if(!$conn){
         echo "Gagal Terhubung ke Database";
     }
+
+    $sql = "CREATE TABLE IF NOT EXISTS daftar_barang (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_barang VARCHAR(50) NOT NULL,
+    kategori VARCHAR(50) NOT NULL,
+    spek VARCHAR(50),
+    unit VARCHAR(50),
+    stok INT
+    )";
+
+    mysqli_query($conn, $sql);
     
 ?>

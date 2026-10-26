@@ -1,4 +1,5 @@
 <?php
+    require_once  __DIR__ . '/databases.php';
     include __DIR__ . '/element.php';
 ?>
 <!DOCTYPE html> 
@@ -45,60 +46,61 @@
                 baseForm1.classList.remove('show');
             });
             </script>
-            
-            <div class="center">
-                <input class="inputCari" type="text" placeholder="Cari Barang.."> 
-                <?php echo kategori("kategori","kategori") ?>
-                <p class="barang">Menampilkan x barang</p>
-            </div>
-            <hr>
-            <div class="bawah">
-                <table class = "tabel-barang">
-                    <thead>
-                        <tr>
+            <div class = "content">
+                <div class= "center">
+                    <div class = "grup1">
+                        <input class="inputCari" type="text" placeholder="Cari Barang.."> 
+                        <?php echo kategori("kategori","kategori") ?>
+                    </div>
+                    
+                    <div class="barang">Menampilkan x barang</div>
+                </div>
+                <div class="bawah">
+                    <table class = "tabel-barang">
+                        <thead>
+                            <tr>
+                                <?php
+                                    $sql = "SELECT 
+                                            id as 'ID',
+                                            nama_barang as 'Nama Barang',
+                                            kategori as 'Kategori',
+                                            spek as 'Spek',
+                                            unit as 'Unit',
+                                            stok as 'Stok' FROM daftar_barang
+                                            ";
+                                    $hasil = mysqli_query($conn, $sql);
+                                    $row = mysqli_fetch_fields($hasil);
+                                    if(!empty($row)){
+                                        foreach($row as $key){
+                                            echo "<th>$key->name</th>";
+                                        }
+                                    }else{
+                                        echo "<th></th>";
+                                    }
+                                        
+                                    
+                                ?>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <?php
-                                include __DIR__ . '/databases.php';
-                                $sql = "SELECT 
-                                        id as 'ID',
-                                        nama_barang as 'Nama Barang',
-                                        kategori as 'Kategori',
-                                        spek as 'Spek',
-                                        unit as 'Unit',
-                                        stok as 'Stok' FROM daftar_barang
-                                        ";
+                                $sql = "SELECT * FROM daftar_barang";
                                 $hasil = mysqli_query($conn, $sql);
-                                $row = mysqli_fetch_fields($hasil);
-                                if(!empty($row)){
-                                    foreach($row as $key){
-                                        echo "<th>$key->name</th>";
+                                if(mysqli_num_rows($hasil) >= 1){
+                                    while($row = mysqli_fetch_assoc($hasil)){
+                                        echo "<tr>";
+                                        foreach($row as $key => $value){
+                                            echo "<td>$value</td>";
+                                        }
+                                        echo "</tr>";
                                     }
                                 }else{
-                                    echo "<th></th>";
+                                    echo "<tr><td colspan = 6 style = 'text-align : center'>Tidak ada Data</td></tr>";
                                 }
-                                    
-                                
-                            ?>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            include __DIR__ . '/databases.php'; 
-                            $sql = "SELECT * FROM daftar_barang";
-                            $hasil = mysqli_query($conn, $sql);
-                            if(mysqli_num_rows($hasil) >= 1){
-                                while($row = mysqli_fetch_assoc($hasil)){
-                                    echo "<tr>";
-                                    foreach($row as $key => $value){
-                                        echo "<td>$value</td>";
-                                    }
-                                    echo "</tr>";
-                                }
-                            }else{
-                                echo "<tr><td colspan = 6 style = 'text-align : center'>Tidak ada Data</td></tr>";
-                            }
-                        ?>    
-                    </tbody>
-                </table>
+                            ?>    
+                        </tbody>
+                    </table>
+                </div>
             </div>
             
         </main>
