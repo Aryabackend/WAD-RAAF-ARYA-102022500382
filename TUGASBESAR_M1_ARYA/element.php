@@ -1,12 +1,12 @@
 <?php
     function kategori($name, $id){
-        echo "
+        return "
             <select name='{$name}' id='{$id}'>
             <option value='' id='pilih' selected >Pilih Kategori...</option>
-            <option value='elektronik'>Elektronik</option>
-            <option value='perkakas'>Perkakas</option>
-            <option value='alatTulis'>Alat Tulis</option>
-            <option value='hardwareKomputer'>Hardware Komputer</option>
+            <option value='Elektronik'>Elektronik</option>
+            <option value='Perkakas'>Perkakas</option>
+            <option value='Alat Tulis'>Alat Tulis</option>
+            <option value='Hardware Komputer'>Hardware Komputer</option>
             </select>
         ";
     }
