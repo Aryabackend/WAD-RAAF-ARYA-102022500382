@@ -106,10 +106,11 @@ table, th, td {
 }
 
 .main{
-    box-sizing: content-box;
+    box-sizing: border-box;
     justify-content: center;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    justify-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .content{
@@ -152,7 +153,9 @@ table, th, td {
 .content{
     display: flex;
     flex-direction: column;
-    padding: 2%;
+    padding: 1.5%;
+    min-width: 50%;
+    width: fit-content;
 }
 
 

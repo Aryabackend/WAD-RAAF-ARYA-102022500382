@@ -70,15 +70,14 @@
                                             ";
                                     $hasil = mysqli_query($conn, $sql);
                                     $row = mysqli_fetch_fields($hasil);
-                                    if(!empty($row)){
-                                        foreach($row as $key){
-                                            echo "<th>$key->name</th>";
-                                        }
-                                    }else{
-                                        echo "<th></th>";
+                                    foreach($row as $key){
+                                        echo "<th>$key->name</th>";
                                     }
-                                        
+                                    if(mysqli_num_rows($hasil) >= 1){
+                                        echo "<th>Action</th>";
+                                    }
                                     
+
                                 ?>
                             </tr>
                         </thead>
@@ -92,6 +91,15 @@
                                         foreach($row as $key => $value){
                                             echo "<td>$value</td>";
                                         }
+                                        echo" 
+                                        <td>
+                                            <form action='delete.php' method='post'>
+                                                <input type='hidden' name='id' value='{$row['id']}'>
+                                                <button type='submit'>Delete</button>
+                                            </form>
+                                        </td>
+                                        ";
+                                        
                                         echo "</tr>";
                                     }
                                 }else{
