@@ -27,22 +27,35 @@
             echo '
             <td class="w-1">
                 <div class="d-flex flex-row justify-content-center gap-3 w-100">
-                    <form action="delete.php" method="post">
-                        <input type="hidden" name="id" value='. $row["id"] .'>
-                        <button class="theme-danger btn-solid" type="submit">Hapus</button>
-                    </form>
+                    <button type="submit" class="theme-danger btn-solid" data-bs-toggle="dialog" data-bs-target="#hapusModal'. $row['id'] .'">Hapus</button>
                     <button type="submit" class="theme-warning btn-solid" data-bs-toggle="dialog" data-bs-target="#updateModal'. $row['id'] .'">Edit</button>
                 </div>
             </td>';
-
-            
-
             echo "</tr>";
+            echo '
+            <div>
+                <dialog class="dialog" id="hapusModal'. $row['id'] .'">
+                    <div class="dialog-header">
+                        <h1 class="dialog-title">Konfirmasi Hapus</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+                    </div>
+                    <div class="dialog-body">
+                        <p class="text-center">Hapus data ?<?p>
+                    </div>
+                    <div class="dialog-footer">
+                    <form class="form1" action="delete.php" method="post">
+                        <input type="hidden" name="id" value='. $row["id"] .'>
+                        <button class="theme-danger btn-solid" type="submit">Hapus</button>
+                    </form>
+                    </div>
+                </dialog>
+            </div>
+            ';
             echo '
             <div>
                 <dialog class="dialog" id="updateModal'. $row['id'] .'">
                     <div class="dialog-header">
-                        <h1 class="dialog-title">Static backdrop</h1>
+                        <h1 class="dialog-title">Edit data</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
                     </div>
                     <form class="form1" action="update.php" method="post">
