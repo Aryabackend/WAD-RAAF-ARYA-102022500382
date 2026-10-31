@@ -10,7 +10,7 @@
     nama_barang VARCHAR(50) NOT NULL,
     kategori VARCHAR(50) NOT NULL,
     spek VARCHAR(50),
-    unit VARCHAR(50),
+    berat int,
     stok INT
     )";
 

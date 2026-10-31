@@ -1,6 +1,34 @@
+:root, :host{
+    scrollbar-gutter: auto;
+  --bs-radius-5: 0.25rem;
+  --bs-spacer: 1rem;
+  --bs-primary-base: var(--bs-orange-400);
+  --bs-primary-bg: var(--bs-primary-base);
+  --bs-primary-bg-subtle: light-dark(var(--bs-orange-100), var(--bs-orange-900));
+  --bs-primary-fg: light-dark(var(--bs-orange-600), var(--bs-orange-400));
+  --bs-primary-border: light-dark(var(--bs-orange-300), var(--bs-orange-600));
+}
+
+tr{
+    text-wrap: nowrap;
+}
+
+.token-demo {
+  --bs-radius-5: 0.5rem;
+  --bs-spacer: 1rem;
+  --bs-primary-base: var(--bs-green-600);
+  --bs-primary-bg: var(--bs-primary-base);
+  --bs-primary-bg-subtle: light-dark(var(--bs-green-100), var(--bs-green-900));
+  --bs-primary-fg: light-dark(var(--bs-green-800), var(--bs-green-600));
+  --bs-primary-border: light-dark(var(--bs-green-500), var(--bs-green-700));
+}
+
+select{
+    --control-select-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='grey' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>") !important;
+    background-image: var(--control-select-bg) !important;}
 
 
-body{
+/* body{
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -38,7 +66,24 @@ select{
     
 }
 
+#backUpdate{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 4%;
+    padding: 2%;
+}
+
+
+
 #baseForm1.show{
+    transition: opacity 0.3s ease;  
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+.updateForm.show{
     transition: opacity 0.3s ease;  
     opacity: 1;
     pointer-events: auto;
@@ -76,6 +121,45 @@ select{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
+
+.updateForm{
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    position: fixed;
+    box-sizing: border-box;
+    background-color: rgba(73, 71, 71, 0.363);
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
+}
+
+#form2{
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 9%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color:  rgb(250, 250, 241);
+    position: fixed;
+    box-sizing: border-box;
+    border: 0 ;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#kategoriUpdate{
+    height: 1.3rem;
+    width:10.5rem;
+}
+
+
 
 input{
     border: 0.01px solid;
@@ -169,8 +253,6 @@ table, th, td {
     justify-items: center;
 }
 
-.inputCari{
-}
 
 #kategoriForm{
     box-sizing: content-box;
@@ -182,4 +264,4 @@ table, th, td {
     box-sizing: content-box;
     margin-top: 5%;
     padding: 5%;
-}
+} */
